@@ -1,0 +1,159 @@
+<!DOCTYPE html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAME SPACE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== القائمة الفوقية ===== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo">GAME<span>SPACE</span></a>
+      
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">Home</a>
+        <a href="#store">Store</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== الواجهة ===== -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1 class="gradient-text">GAME SPACE</h1>
+    </div>
+  </section>
+
+  <!-- ===== المتجر ===== -->
+  <section class="store" id="store">
+    <div class="container">
+      <h2 class="section-title">Store</h2>
+      <div class="games-grid">
+        
+        <!-- كارت اللعبة (هنا السر كامل) -->
+        <div class="game-card" 
+             data-link="PUT_YOUR_LINK_HERE" 
+             data-title="Call of Duty MW" 
+             data-price="69.99" 
+             data-img="cod.jpg">
+          
+          <div class="game-img">
+            <img src="cod.jpg" alt="Call of Duty MW">
+          </div>
+          <div class="game-info">
+            <h3 class="game-title">Call of Duty MW</h3>
+            <p class="game-price">$69.99</p>
+          </div>
+          <!-- زر السلة -->
+          <button class="add-to-cart-btn" data-title="Call of Duty MW" data-price="69.99">
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== النافذة المنبثقة (Modal) ===== -->
+  <div class="modal-overlay" id="gameModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&times;</button>
+      <img id="modalImg" src="" alt="Game" class="modal-img">
+      <h2 id="modalTitle" class="modal-title"></h2>
+      <p id="modalPrice" class="modal-price"></p>
+      <!-- زر الشراء (يودي لرابط العمولة) -->
+      <a href="#" id="modalBuyBtn" target="_blank" class="buy-now-btn">Buy Now (Go to Store)</a>
+    </div>
+  </div>
+
+  <!-- ===== سلة المشتريات (Drawer) ===== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+      <button class="btn-checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <script src="main.js"></script>
+</body>
+</html>
+<!-- اللعبة 1: Call of Duty -->
+<div class="game-card" 
+     data-link="https://www.g2a.com/call-of-duty-modern-warfare-4-pc-steam-account-global-i10000514854007" 
+     data-title="Call of Duty MW" 
+     data-price="69.99" 
+     data-img="cod.jpg">
+  <div class="game-img">
+    <img src="cod.jpg" alt="Call of Duty MW">
+  </div>
+  <div class="game-info">
+    <h3 class="game-title">Call of Duty MW</h3>
+    <p class="game-price">69.99</p>
+  </div>
+  <button class="add-to-cart-btn" data-title="Call of Duty MW" data-price="69.99">
+    Add to Cart
+  </button>
+</div>
+
+<!-- اللعبة 2: FC 27 -->
+<div class="game-card" 
+     data-link="https://www.g2a.com/ea-sports-fc-27-pc-ea-app-key-global-i10000515240001" 
+     data-title="FC 27" 
+     data-price="64.62" 
+     data-img="fc27.jpg">
+  <div class="game-img">
+    <img src="fc27.jpg" alt="FC 27">
+  </div>
+  <div class="game-info">
+    <h3 class="game-title">FC 27</h3>
+    <p class="game-price">64.62</p>
+  </div>
+  <button class="add-to-cart-btn" data-title="FC 27" data-price="64.62">
+    Add to Cart
+  </button>
+</div>
+<!-- كارت لعبة جديدة -->
+<div class="game-card" 
+     data-link="https://www.g2a.com/try-to-get-cyberpunk-2077-ultimate-edition-random-1-key-pc-steam-key-global-i10000509143001" 
+     data-title="CYBERPUNK 2077" 
+     data-price="69.99" 
+     data-img="cb77.jpg">
+  
+  <div class="game-img">
+    <img src="cb77.jpg" alt="cyberpunk 2077">
+  </div>
+  
+  <div class="game-info">
+    <h3 class="cyberpunk 2077"></h3>
+    <p class="game-price">69.99</p>
+  </div>
+  
+  <button class="add-to-cart-btn" data-title="cyberpunk 2077" data-price="69.99">
+    Add to Cart
+  </button>
+</div>
