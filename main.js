@@ -143,4 +143,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+});gameCards.forEach(function(card) {
+  card.addEventListener('click', function(e) {
+    
+    // ⬇️ زيد هاد السطر إجباري (باش يمنع التداخل) ⬇️
+    e.stopPropagation(); 
+
+    if (e.target.closest('.add-to-cart-btn')) return;
+
+    var link = this.getAttribute('data-link');
+    var title = this.getAttribute('data-title');
+    var price = this.getAttribute('data-price');
+    var img = this.getAttribute('data-img');
+
+    document.getElementById('modalImg').src = img;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalPrice').textContent = price;
+    modalBuyBtn.href = link; 
+
+    modal.classList.add('open');
+  });
 });
